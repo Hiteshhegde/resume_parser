@@ -5,11 +5,13 @@ from numberparse import extract_mobile_number
 from emailparse import extract_email
 from skillparse import extract_skills
 from resparse import ResumeParse
-pdf_path = '/Users/hiteshhegde/Desktop/testresume.pdf'
+
+pdf = '/Users/hiteshhegde/Desktop/testresume.pdf'
 doc_path = '/Users/hiteshhegde/Desktop/testresume.docx'
+directory = '/Users/hiteshhegde/Desktop/resumes'
 
 
-def parseres(pdf_path):
+def parse_res(pdf_path):
     if pdf_path:
         resume_text = extract_text_from_pdf(pdf_path)
     if doc_path:
@@ -22,8 +24,6 @@ def parseres(pdf_path):
 
     return name, phone, email, skills
 
-
-#print(parseres(pdf_path))
 
 resume_parser = ResumeParse(doc_path, "skills.csv")
 
