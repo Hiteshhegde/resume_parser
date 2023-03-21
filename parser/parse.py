@@ -1,8 +1,10 @@
-from pdfresparse import extract_text_from_pdf
+import os
+
 from docresparse import extract_text_from_doc
+from emailparse import extract_email
 from nameparse import extract_name
 from numberparse import extract_mobile_number
-from emailparse import extract_email
+from pdfresparse import extract_text_from_pdf
 from skillparse import extract_skills
 from resparse import ResumeParse
 
@@ -25,7 +27,24 @@ def parse_res(pdf_path):
     return name, phone, email, skills
 
 
-resume_parser = ResumeParse(doc_path, "skills.csv")
+# resume_parser = ResumeParse(doc_path, "skills.csv")
 
-print(resume_parser.parse_resume())
+# print(resume_parser.parse_resume())
 
+
+def get_file_paths(dir_path):
+    files = []
+    for file in os.listdir(dir_path):
+        f = os.path.join(dir_path, file)
+
+        if os.path.isfile(f):
+            files.append(str(f))
+
+    return files
+
+
+resumes = get_file_paths(directory)
+for resume in resumes:
+    resume_parser = ResumeParse(resume, "skills.csv")
+
+    print(resume_parser.parse_resume())

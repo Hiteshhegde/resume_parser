@@ -14,7 +14,7 @@ EDUCATION = [
     'ME', 'M.E', 'M.E.', 'MS', 'M.S',
     'BTECH', 'B.TECH', 'M.TECH', 'MTECH',
     'SSC', 'HSC', 'CBSE', 'ICSE', 'X', 'XII',
-    'B.Sc', 'B.SC'
+    'B.Sc', 'B.SC', 'M.B.A', 'MBA',
 ]
 
 
